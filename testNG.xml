@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 
-<suite name="FreeCRM Test Suite">
+<suite name="FreeCRM Test Suite" parallel="classes" thread-count="3">
 
     <!-- Register Listener -->
     <listeners>
-        <listener class-name="com.freecrm.listeners.TestListener"/>
+        <listener class-name="com.crm.qa.util.ExtentListener"/>
+        <listener class-name="com.crm.qa.util.RetryAnalyser"></listener>
         <!-- Example:
         <listener class-name="com.aventstack.extentreports.testng.listener.ExtentITestListenerClassAdapter"/>
         -->
@@ -21,9 +22,9 @@
         </groups>
 
         <classes>
-            <class name="com.freecrm.testcases.LoginPageTest"/>
-            <class name="com.freecrm.testcases.HomePageTest"/>
-            <class name="com.freecrm.testcases.ContactsPageTest"/>
+            <class name="com.crm.qa.tests.LoginPageTest"/>
+            <class name="com.crm.qa.tests.HomePageTest"/>
+            <class name="com.crm.qa.tests.ContactsPageTest"/>
         </classes>
 
     </test>

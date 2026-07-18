@@ -1,10 +1,16 @@
   package com.crm.qa.util;
 
+import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 
+  import org.apache.commons.io.FileUtils;
+  import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
+
 
 import com.crm.qa.base.TestBase;
 
@@ -54,4 +60,26 @@ public class TestUtill extends TestBase {
 		return data;
 		
 	}
+	
+	 public static String captureScreenshot(String testName, WebDriver driver) {
+
+	        String path = System.getProperty("user.dir")
+	                + "/screenshots/" + testName + ".png";
+
+	        try {
+	            TakesScreenshot ts = (TakesScreenshot) driver;
+
+	            File source = ts.getScreenshotAs(OutputType.FILE);
+
+	            File destination = new File(path);
+
+	            FileUtils.copyFile(source, destination);
+
+	        } catch (IOException e) {
+	            e.printStackTrace();
+	        }
+
+	        return path;
+	    }
 }
+

@@ -1,0 +1,12 @@
+com\crm\qa\pages\ContactsPage.class
+com\crm\qa\pages\TaskPage.class
+com\crm\qa\pages\HomePage.class
+com\crm\qa\pages\SignUp.class
+com\crm\qa\pages\LoginPage.class
+com\qa\ExtentReportListner\ExtendReportListner.class
+com\crm\qa\util\ExcelReader.class
+com\crm\qa\util\ExtentListener.class
+com\crm\qa\base\TestBase.class
+com\crm\qa\util\TestUtill.class
+com\crm\qa\util\ExtentReportManager.class
+com\crm\qa\pages\Dealpage.class
